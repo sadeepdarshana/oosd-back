@@ -10,10 +10,12 @@ router.post('/', function (req, res) {
     mindex = req.body.index;
     mkey = req.body.key;
 
+
+
     console.log({index:mindex,key:mkey});
 
     if(authStore.checkAuth(mindex,mkey))
-        main.db.collection("members").findOne({_id:mindex},{pw:0}, function(err, result) {
+        main.db.collection("members").findOne({_id:mindex}, function(err, result) {
             if (err) throw err;
             console.log("userInfo_success",{index:mindex,key:mkey});
             res.status(200).json(result);
