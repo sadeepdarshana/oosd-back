@@ -6,6 +6,7 @@ var dict = {};
 
 
 function checkAuth(index,key) {
+    if(index==null)return false;
     if(dict[index]==key)return true;
     return false;
 }

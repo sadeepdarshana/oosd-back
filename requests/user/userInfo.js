@@ -5,19 +5,23 @@ var main = require(require('path').dirname(require.main.filename)+"/main");
 var authStore = require(require('path').dirname(require.main.filename)+"/authStore");
 
 
-router.get('/', function (req, res) {
-    mindex = req.query.index;
-    mkey = req.query.key;
+router.post('/', function (req, res) {
+    
+    mindex = req.body.index;
+    mkey = req.body.key;
 
-    //console.log(authStore.checkAuth(mindex,mkey));
+    console.log({index:mindex,key:mkey});
 
     if(authStore.checkAuth(mindex,mkey))
-        main.db.collection("members").findOne({_id:mindex}, function(err, result) {
+        main.db.collection("members").findOne({_id:mindex},{pw:0}, function(err, result) {
             if (err) throw err;
+            console.log("userInfo_success",{index:mindex,key:mkey});
             res.status(200).json(result);
         });
-    else 
+    else {
         res.status(403).json({});
+        console.log("userInfo_failed",{index:mindex,key:mkey});
+    }
 });
 
 module.exports = router;
