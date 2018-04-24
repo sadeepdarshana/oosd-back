@@ -8,6 +8,8 @@ var authStore = require(require('path').dirname(require.main.filename)+"/authSto
 
 
 router.post('/', function (req, res) {
+    console.log("sdfsdsdfgdfgdfg");
+
     mindex = req.body.index;
     mpw = req.body.pw;
 
