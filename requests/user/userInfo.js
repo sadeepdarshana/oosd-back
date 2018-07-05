@@ -11,8 +11,8 @@ router.post('/', function (req, res) {
     mkey = req.body.key;
 
 
+    console.log("userInfo",mindex,mkey);
 
-    console.log({index:mindex,key:mkey});
 
     if(authStore.checkAuth(mindex,mkey))
         main.db.collection("members").findOne({_id:mindex}, function(err, result) {

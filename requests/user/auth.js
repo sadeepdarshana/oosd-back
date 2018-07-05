@@ -8,10 +8,13 @@ var authStore = require(require('path').dirname(require.main.filename)+"/authSto
 
 
 router.post('/', function (req, res) {
-    console.log("sdfsdsdfgdfgdfg");
 
     mindex = req.body.index;
     mpw = req.body.pw;
+
+    console.log("auth",mindex,mpw);
+
+    mpw = require('crypto').createHash('md5').update(mpw).digest('hex');
 
     main.db.collection('members').findOne({ _id: mindex, pw: mpw }, function(err, doc){
         if(doc) 

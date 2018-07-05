@@ -6,6 +6,9 @@ var dict = {};
 
 
 function checkAuth(index,key) {
+
+    console.log("checkAuth",index,key);
+
     if(index==null)return false;
     if(dict[index]==key)return true;
     return false;
@@ -13,7 +16,7 @@ function checkAuth(index,key) {
 
 function addAuth(index){
     dict[index] = utils.getRnd();
-    console.log(dict);
+    console.log("generatedKey",index,dict, dict[index]);
     return dict[index];
 }
 
