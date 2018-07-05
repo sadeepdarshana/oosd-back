@@ -24,6 +24,11 @@ MongoClient.connect(url, function(err, database) {
 
 
 app.use('/firstRun', require('./requests/misc/firstRun.js'));
+app.use('/createExam', require('./requests/misc/createExam.js'));
+app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
+app.use('/getExam', require('./requests/misc/getExam.js'));;
+app.use('/editExam', require('./requests/misc/editExam.js'));;
+app.use('/getAllExams', require('./requests/misc/getAllExams.js'));
 app.use('/createUser', require('./requests/user/createUser.js'));
 app.use('/createModule', require('./requests/misc/createModule.js'));
 app.use('/createBatch', require('./requests/misc/createBatch.js'));
