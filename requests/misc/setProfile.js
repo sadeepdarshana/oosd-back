@@ -17,19 +17,19 @@ router.post('/', async function (req, res) {
 
     console.log("setProfile",index,fullname,dob,address,tele,gender,email,batch);
 
+    sett = {};
 
+    if(fullname)sett.fullname = fullname;
+    if(dob)sett.dob = dob;
+    if(address)sett.address = address;
+    if(tele)sett.tele = tele;
+    if(gender)sett.gender = gender;
+    if(email)sett.email = email;
+    if(batch)sett.batch = batch;
 
     try {
         await main.db.collection("members").updateOne({_id: index}, {
-            $set: {
-                fullname: fullname,
-                dob: dob,
-                address: address,
-                tele: tele,
-                gender: gender,
-                email: email,
-                batch: batch
-            }
+            $set: sett
         });
         res.status(200).json({result:200});
         console.log("setProfile success",index);
