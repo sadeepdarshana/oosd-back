@@ -10,7 +10,7 @@ router.post('/', function (req, res) {
     maccountType = req.body.accountType;
 
 
-    console.log("userCreate",mindex,mpw,maccountType);
+    console.log("createUser",mindex,mpw,maccountType);
 
 
     mpw = require('crypto').createHash('md5').update(mpw).digest('hex');
@@ -24,7 +24,7 @@ router.post('/', function (req, res) {
             return;
         }
         res.status(200).json({result:200});
-        console.log("userCreate_success",mindex,mpw,maccountType);
+        console.log("createUser_success",mindex,mpw,maccountType);
     });
 });
 
