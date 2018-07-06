@@ -24,12 +24,16 @@ MongoClient.connect(url, function(err, database) {
 
 
 app.use('/firstRun', require('./requests/misc/firstRun.js'));
-app.use('/sendNotices', require('./requests/misc/sendNotices.js'));
-app.use('/getNotices', require('./requests/misc/getNotices.js'));
+app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
+app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
+app.use('/addResult', require('./requests/misc/addResult.js'));
+app.use('/getResult', require('./requests/misc/getResult.js'));
 
 app.use('/createExam', require('./requests/misc/createExam.js'));
 app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
 app.use('/getExam', require('./requests/misc/getExam.js'));;
+app.use('/getSubscribedModules', require('./requests/misc/getSubscribedModules.js'));;
+app.use('/getSubscribedExams', require('./requests/misc/getSubscribedExams.js'));;
 app.use('/editExam', require('./requests/misc/editExam.js'));;
 app.use('/getAllExams', require('./requests/misc/getAllExams.js'));
 app.use('/createUser', require('./requests/user/createUser.js'));
@@ -45,7 +49,7 @@ app.use('/setProfile', require('./requests/misc/setProfile.js'));
 app.use('/getProfile', require('./requests/misc/getProfile.js'));
 app.use('/unsubscribe', require('./requests/misc/unsubscribe.js'));
 app.use('/sunsubscribe', require('./requests/misc/sunsubscribe.js'));
-app.use('/auth', require('./requests/user/auth.js'));     
+app.use('/auth', require('./requests/user/auth.js'));
 
 
 app.listen(8082);
