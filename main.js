@@ -24,6 +24,10 @@ MongoClient.connect(url, function(err, database) {
 
 
 app.use('/firstRun', require('./requests/misc/firstRun.js'));
+app.use('/addRepeat', require('./requests/misc/addRepeat.js'));
+app.use('/contactAdmin', require('./requests/misc/contactAdmin.js'));
+app.use('/getRepeatRequests', require('./requests/misc/getRepeatRequests.js'));
+app.use('/applyRepeat', require('./requests/misc/applyRepeat.js'));
 app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
 app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
 app.use('/createExam', require('./requests/misc/createExam.js'));

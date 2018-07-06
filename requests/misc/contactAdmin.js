@@ -2,14 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 var main = require(require('path').dirname(require.main.filename)+"/main");
-
+var moment = require('moment');
 
 router.post('/', async function (req, res) {
     index = req.body.index;
     topic = req.body.topic;
     description = req.body.description;
-    datetime = req.body.datetime;
-
+    datetime = moment().format();
     console.log("contactAdmin");
 
 
