@@ -25,6 +25,8 @@ MongoClient.connect(url, function(err, database) {
 
 app.use('/firstRun', require('./requests/misc/firstRun.js'));
 app.use('/sendNotices', require('./requests/misc/sendNotices.js'));
+app.use('/getNotices', require('./requests/misc/getNotices.js'));
+
 app.use('/createExam', require('./requests/misc/createExam.js'));
 app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
 app.use('/getExam', require('./requests/misc/getExam.js'));;
