@@ -13,7 +13,9 @@ router.post('/', async function (req, res) {
 
     try {
         await main.db.collection("members").updateOne({_id: index}, {$addToSet: {modules: module}});
-    }catch{return;}
+    }catch(e){
+        return e;
+    }
 
     res.status(200).json({result:200});
     console.log("subscribe_success");
