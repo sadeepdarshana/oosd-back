@@ -13,8 +13,9 @@ router.post('/', async function (req, res) {
 
     try {
         await main.db.collection("members").updateOne({_id: index}, {$pull: {modules: module}});
-    }catch{return;}
-
+    }catch(e){
+        return e;
+    }
     res.status(200).json({result:200});
     console.log("unsubscribe_success");
 
