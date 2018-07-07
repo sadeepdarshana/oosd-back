@@ -15,8 +15,8 @@ router.post('/', async function (req, res) {
 
     result = await main.db.collection("members").findOne({_id:mindex});
 
-    res.status(200).json(result.modules);
-    console.log("getAllModules_success");
+    res.status(200).json(result.modules||[]);
+    console.log("getSubscribedModules_success");
 });
 
 module.exports = router;
