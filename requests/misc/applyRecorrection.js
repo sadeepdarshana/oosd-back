@@ -11,8 +11,7 @@ router.post('/', async function (req, res) {
     console.log("applyRecorrection",index,exam);
 
 
-        await main.db.collection("exams").updateOne({_id: exam}, {$addToSet: {recorrection: index}});
-
+    await main.db.collection("exams").updateOne({_id: exam}, {$addToSet: {recorrection: index}});
 
     res.status(200).json({result:200});
     console.log("applyRecorrection_success");

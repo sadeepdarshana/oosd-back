@@ -7,7 +7,7 @@ var main = require(require('path').dirname(require.main.filename)+"/main");
 router.post('/', function (req, res) {
     index = req.body.index;
     result = req.body.result;
-    main.db.collection("exams").updateOne(results[index],{$set : }, function(err, resi) {
+    // main.db.collection("exams").updateOne(results[index],{$set : }, function(err, resi) {
         if (err) {
             res.status(409).json({result:409});
             return;

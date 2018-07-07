@@ -28,7 +28,6 @@ app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
 app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
 app.use('/addResult', require('./requests/misc/addResult.js'));
 app.use('/getResult', require('./requests/misc/getResult.js'));
-
 app.use('/createExam', require('./requests/misc/createExam.js'));
 app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
 app.use('/getExam', require('./requests/misc/getExam.js'));;
@@ -49,6 +48,8 @@ app.use('/setProfile', require('./requests/misc/setProfile.js'));
 app.use('/getProfile', require('./requests/misc/getProfile.js'));
 app.use('/unsubscribe', require('./requests/misc/unsubscribe.js'));
 app.use('/sunsubscribe', require('./requests/misc/sunsubscribe.js'));
+app.use('/viewStudents', require('./requests/misc/viewStudentList.js'));
+
 app.use('/auth', require('./requests/user/auth.js'));
 
 
