@@ -11,6 +11,8 @@ router.post('/', async function (req, res) {
     result = await main.db.collection("modules").find({},{'fields':{ "_id":1}});
 
     result = await result.toArray();
+
+
     res.status(200).json(result);
     console.log("getAllModules_success");
 });
