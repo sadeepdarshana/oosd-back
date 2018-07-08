@@ -13,9 +13,10 @@ router.post('/', async function (req, res) {
     for (var variable in x) {
       if (x[variable]['index']== index){
         console.log(x[variable]);
+          res.status(200).json(x[variable]);
+          return;
       }
     }
-    res.status(200).json(x[variable]);
 
 });
 
