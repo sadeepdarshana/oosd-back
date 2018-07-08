@@ -8,7 +8,6 @@ router.post('/', function (req, res) {
     mindex = req.body.index;
     mpw = req.body.pw;
     maccountType = req.body.accountType;
-    batch = req.body.batch;
 
 
     console.log("createUser",mindex,mpw,maccountType);
@@ -17,7 +16,7 @@ router.post('/', function (req, res) {
     mpw = require('crypto').createHash('md5').update(mpw).digest('hex');
 
 
-    member = {_id:mindex, pw:mpw, accountType:maccountType, batch:batch};
+    member = {_id:mindex, pw:mpw, accountType:maccountType}
 
     main.db.collection("members").insertOne(member, function(err, resi) {
         if (err) {
