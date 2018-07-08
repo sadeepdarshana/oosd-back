@@ -34,6 +34,7 @@ app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
 app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
 app.use('/addResult', require('./requests/misc/addResult.js'));
 app.use('/getResult', require('./requests/misc/getResult.js'));
+app.use('/editResult', require('./requests/misc/editResult.js'));
 app.use('/createExam', require('./requests/misc/createExam.js'));
 app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
 app.use('/getExam', require('./requests/misc/getExam.js'));;
@@ -41,6 +42,8 @@ app.use('/getSubscribedModules', require('./requests/misc/getSubscribedModules.j
 app.use('/getSubscribedExams', require('./requests/misc/getSubscribedExams.js'));;
 app.use('/editExam', require('./requests/misc/editExam.js'));;
 app.use('/getAllExams', require('./requests/misc/getAllExams.js'));
+app.use('/getNotices', require('./requests/misc/getNotices.js'));
+app.use('/sendNotices', require('./requests/misc/sendNotices.js'));
 app.use('/createUser', require('./requests/user/createUser.js'));
 app.use('/createModule', require('./requests/misc/createModule.js'));
 app.use('/createBatch', require('./requests/misc/createBatch.js'));

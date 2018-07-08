@@ -4,16 +4,20 @@ var router = express.Router();
 var main = require(require('path').dirname(require.main.filename)+"/main");
 
 
-router.post('/', function (req, res) {
-    index = req.body.index;
-    result = req.body.result;
-     main.db.collection("exams").updateOne(results[index], function(err, resi) {
-        if (err) {
-            res.status(409).json({result:409});
-            return;
-        }
-        res.status(200).json({result:200});
-    });
+router.post('/', async function (req, res) {
+    let module_id = req.body.module_id;
+    let result = req.body.result;
+
+
+    await main.db.collection("exams").update({'_id':module_id},{$pull:{results :result}});
+
+    
+
+    //await main.db.collection("exams").update({_id: index},{$addToSet : {results :result}}
+
+
+    res.status(200).json({result:200});
+
 });
 
 module.exports = router;
