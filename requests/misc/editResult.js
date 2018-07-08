@@ -11,7 +11,7 @@ router.post('/', async function (req, res) {
 
     await main.db.collection("exams").update({'_id':module_id},{$pull:{results :result}});
 
-    
+
 
     //await main.db.collection("exams").update({_id: index},{$addToSet : {results :result}}
 
