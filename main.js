@@ -28,6 +28,9 @@ app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
 app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
 app.use('/addResult', require('./requests/misc/addResult.js'));
 app.use('/getResult', require('./requests/misc/getResult.js'));
+app.use('/editResult', require('./requests/misc/editResult.js'));
+app.use('/getAllResult', require('./requests/misc/getAllResults.js'));
+
 app.use('/createExam', require('./requests/misc/createExam.js'));
 app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
 app.use('/getExam', require('./requests/misc/getExam.js'));;
