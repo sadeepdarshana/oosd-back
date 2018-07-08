@@ -50,6 +50,7 @@ app.use('/unsubscribe', require('./requests/misc/unsubscribe.js'));
 app.use('/sunsubscribe', require('./requests/misc/sunsubscribe.js'));
 app.use('/viewStudents', require('./requests/misc/viewStudentList.js'));
 app.use('/sendNotices', require('./requests/misc/sendNotices.js'));
+app.use('/getAllModuleDetails', require('./requests/misc/getAllModuleDetails.js'));
 
 app.use('/auth', require('./requests/user/auth.js'));
 
