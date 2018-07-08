@@ -7,6 +7,7 @@ var main = require(require('path').dirname(require.main.filename)+"/main");
 router.post('/', function (req, res) {
     index = req.body.module_id;
     result = req.body.result;
+
     main.db.collection("exams").updateOne({_id: index},{$addToSet : {results :result}}, function(err, resi) {
         if (err) {
             res.status(409).json({result:409});

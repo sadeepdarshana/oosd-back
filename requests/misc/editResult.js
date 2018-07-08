@@ -9,6 +9,7 @@ router.post('/', function (req, res) {
     result = req.body.result;
     index = req.body.index;
      main.db.collection("exams").updateOne({_id:_id,"results.index": index.toString()},{$set : { "results.$.result":result} });
+
 });
 
 module.exports = router;
