@@ -24,13 +24,20 @@ MongoClient.connect(url, function(err, database) {
 
 
 app.use('/firstRun', require('./requests/misc/firstRun.js'));
+app.use('/addRepeat', require('./requests/misc/addRepeat.js'));
+app.use('/getUserInquiries', require('./requests/misc/getUserInquiries.js'));
+app.use('/contactAdmin', require('./requests/misc/contactAdmin.js'));
+app.use('/getRecorrectableExams', require('./requests/misc/getRecorrectableExams.js'));
+app.use('/getRepeatRequests', require('./requests/misc/getRepeatRequests.js'));
+app.use('/applyRepeat', require('./requests/misc/applyRepeat.js'));
+app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
+app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
 app.use('/applyRecorrection', require('./requests/misc/applyRecorrection.js'));
 app.use('/getRecorrection', require('./requests/misc/getRecorrection.js'));
 app.use('/addResult', require('./requests/misc/addResult.js'));
 app.use('/getResult', require('./requests/misc/getResult.js'));
 app.use('/editResult', require('./requests/misc/editResult.js'));
 app.use('/getAllResult', require('./requests/misc/getAllResults.js'));
-
 app.use('/createExam', require('./requests/misc/createExam.js'));
 app.use('/deleteExam', require('./requests/misc/deleteExam.js'));
 app.use('/getExam', require('./requests/misc/getExam.js'));;
@@ -38,6 +45,8 @@ app.use('/getSubscribedModules', require('./requests/misc/getSubscribedModules.j
 app.use('/getSubscribedExams', require('./requests/misc/getSubscribedExams.js'));;
 app.use('/editExam', require('./requests/misc/editExam.js'));;
 app.use('/getAllExams', require('./requests/misc/getAllExams.js'));
+app.use('/getNotices', require('./requests/misc/getNotices.js'));
+app.use('/sendNotices', require('./requests/misc/sendNotices.js'));
 app.use('/createUser', require('./requests/user/createUser.js'));
 app.use('/createModule', require('./requests/misc/createModule.js'));
 app.use('/createBatch', require('./requests/misc/createBatch.js'));

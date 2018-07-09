@@ -12,6 +12,9 @@ router.post('/', async function (req, res) {
 
 
     try {
+
+        if (module==null || module =='');
+        else
         await main.db.collection("members").updateOne({_id: index}, {$addToSet: {modules: module}});
     }catch(e){
         return e;
