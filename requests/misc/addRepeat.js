@@ -10,6 +10,12 @@ router.post('/', async function (req, res) {
 
     console.log("addRepeat",index,exam);
 
+    if(await main.db.collection("members").findOne({_id:index}) == null){
+
+        res.status(400).json({result:400});
+        console.log("addRepeat_failed");
+        return;
+    }
 
     try {
         await main.db.collection("exams").updateOne({_id: exam}, {$addToSet: {repeat: index}});
